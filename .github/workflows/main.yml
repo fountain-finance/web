@@ -3,6 +3,8 @@ name: Deploy to GCP App Engine
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
@@ -49,11 +51,21 @@ jobs:
           steps.cache-yarn.outputs.cache-hit != 'true' ||
           steps.cache-node-modules.outputs.cache-hit != 'true'
 
-      - name: '[PROD] Build Angular app'
+      - name: Formatting
+        run: yarn format-verify
+        if: |
+          steps.cache-yarn.outputs.cache-hit != 'true' ||
+          steps.cache-node-modules.outputs.cache-hit != 'true'
+
+      - name: 'Build Angular app'
+        if: github.ref != 'refs/heads/master'
+        run: yarn build-prod
+
+      - name: 'Build Angular app for GCP App Engine'
         if: github.ref == 'refs/heads/master'
         run: yarn build-ae-prod
 
-      - name: '[PROD] Deploy to App Engine'
+      - name: 'Deploy to GCP App Engine'
         if: github.ref == 'refs/heads/master'
         uses: GoogleCloudPlatform/github-actions/appengine-deploy@master
         with:

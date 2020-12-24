@@ -1,27 +1,19 @@
-# Fountain
+# fountain.finance
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+Landing page and dapp for fountain.finance
 
-## Development server
+https://joaoritter.medium.com/%EF%B8%8F-fountain-finance-1f2b5a33cb10
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Configured with the latest fountain Ropsten deployment (12-23-2020)
 
-## Code scaffolding
+# Contributing
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Open PRs against master branch. Wait for CI checks.
 
-## Build
+# Development
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Built with Angular
 
-## Running unit tests
+`yarn install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`ng serve` for local dev server
