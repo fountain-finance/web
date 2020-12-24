@@ -53,9 +53,6 @@ jobs:
 
       - name: Formatting
         run: yarn format-verify
-        if: |
-          steps.cache-yarn.outputs.cache-hit != 'true' ||
-          steps.cache-node-modules.outputs.cache-hit != 'true'
 
       - name: 'Build Angular app'
         if: github.ref != 'refs/heads/master'
