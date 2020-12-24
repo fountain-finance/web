@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.accounts$ = this.accountsService.accounts$
-    this.connectAccount()
   }
 
   async connectAccount() {
